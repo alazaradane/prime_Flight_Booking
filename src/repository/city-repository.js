@@ -2,7 +2,7 @@
 const db = require('../models/index');
 const City = db.city;
 
-class cityRepository {
+class CityRepository {
   //create city
   async createCity({ name }) {
     try {
@@ -23,6 +23,7 @@ class cityRepository {
           id: cityId
         }
       })
+      return true;
     } catch (error) {
       console.log('something went wrong ');
       throw { error };
@@ -58,4 +59,4 @@ class cityRepository {
 
 }
 
-module.exports = cityRepository;
+module.exports = CityRepository;
