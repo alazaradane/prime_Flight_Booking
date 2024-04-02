@@ -16,7 +16,7 @@ class CityRepository {
   }
 
   //delete city
-  async deleteCity({ cityId }) {
+  async deleteCity(cityId) {
     try {
       await City.destroy({
         where: {
@@ -33,7 +33,7 @@ class CityRepository {
   //update city
   async updateCity(data, cityId) {
     try {
-    //  below approach is not returning the updated object.
+      //  below approach is not returning the updated object.
       const city = await City.update(data, {
         where: {
           id: cityId
@@ -61,6 +61,17 @@ class CityRepository {
       throw { error };
     }
 
+  }
+
+  //get all cities
+  async getAllCities() {
+    try {
+      const cities = await City.findAll();
+      return cities;
+    } catch (error) {
+      console.log('something went wrong ', error.message);
+      throw { error };
+    }
   }
 
 
