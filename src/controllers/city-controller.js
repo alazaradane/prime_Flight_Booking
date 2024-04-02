@@ -4,19 +4,19 @@ const cityService = new CityService();
 
 
 //create city
-const create = async(req, res) => {
+const create = async (req, res) => {
   try {
     const city = await cityService.createCity(req.body);
     return res.status(201).json({
-      data:city,
+      data: city,
       success: true,
       message: 'successfully created city',
-      err:{}
+      err: {}
     })
   } catch (error) {
     console.log('something went wrong ', error);
     return res.status(500).json({
-      data:{},
+      data: {},
       success: false,
       message: 'failed to create city',
       err: error
@@ -26,20 +26,20 @@ const create = async(req, res) => {
 }
 
 //delete city
-const destroy = async(req, res) => {
+const destroy = async (req, res) => {
   try {
-    const city = await cityService.deleteCity(req.params.id);
+    const city = await cityService.deleteCity({ cityId: req.params.id });
     return res.status(201).json({
-      data:city,
+      data: city,
       success: true,
       message: 'successfully deleted city',
-      err:{}
+      err: {}
     })
 
   } catch (error) {
     console.log('something went wrong ', error);
     return res.status(500).json({
-      data:{},
+      data: {},
       success: false,
       message: 'failed to delete city',
       err: error
@@ -49,20 +49,20 @@ const destroy = async(req, res) => {
 }
 
 //get city by id
-const get =async (req, res) => {
+const get = async (req, res) => {
   try {
-    const city = await cityService.getCity(req.params.id);
+    const city = await cityService.getCity({cityId: req.params.id });
     return res.status(201).json({
-      data:city,
+      data: city,
       success: true,
       message: 'successfully fetched city',
-      err:{}
+      err: {}
     })
 
   } catch (error) {
     console.log('something went wrong ', error);
     return res.status(500).json({
-      data:{},
+      data: {},
       success: false,
       message: 'failed to fetch city',
       err: error
@@ -72,19 +72,20 @@ const get =async (req, res) => {
 }
 
 //update city
-const update = async(req, res) => {
+const update = async (req, res) => {
   try {
-    const city = await cityService.updateCity(req.params.id, req.body);
+    const city = await cityService.updateCity(req.body, req.params.id );
+   
     return res.status(201).json({
-      data:city,
+      data: city,
       success: true,
       message: 'successfully updated city',
-      err:{}
+      err: {}
     })
   } catch (error) {
     console.log('something went wrong ', error);
     return res.status(500).json({
-      data:{},
+      data: {},
       success: false,
       message: 'failed to update city',
       err: error

@@ -11,7 +11,7 @@ class CityRepository {
     } catch (error) {
       console.log('something went wrong ');
       throw { error };
-      
+
     }
   }
 
@@ -31,14 +31,21 @@ class CityRepository {
   }
 
   //update city
-  async updateCity(cityId, data){
+  async updateCity(data, cityId) {
     try {
+    //  below approach is not returning the updated object.
       const city = await City.update(data, {
         where: {
           id: cityId
         }
       });
-      
+      return city;
+
+      // const city = await City.findByPk(cityId);
+      // city.name = data.name;
+      // await city.save();
+      // return city;
+
     } catch (error) {
       console.log('something went wrong ');
       throw { error };
@@ -46,7 +53,7 @@ class CityRepository {
   }
 
   //get city
-  async getCity(cityId){
+  async getCity({ cityId }) {
     try {
       const city = await City.findByPk(cityId)
     } catch (error) {
