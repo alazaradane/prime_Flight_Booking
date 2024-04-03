@@ -1,0 +1,5 @@
+node_modules/
+.env
+Notes.md
+src/config/config.json
+notes2(auth).md
