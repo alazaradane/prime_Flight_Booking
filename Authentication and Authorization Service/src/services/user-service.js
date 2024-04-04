@@ -40,6 +40,15 @@ class UserService{
   }
 
 
+  checkPassword(userInputPassword, encryptedPassword){
+   try {
+    return bcrypt.compareSync(userInputPassword, encryptedPassword);
+   } catch (error) {
+     console.log('Something went wrong on user service checkPassword method');
+     throw error;
+    
+   }
+
 }
 
 module.exports = UserService;
