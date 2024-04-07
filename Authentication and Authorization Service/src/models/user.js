@@ -2,7 +2,7 @@
 const {
   Model
 } = require('sequelize');
-const {SALT} = require('../config/serverConfig');
+const { SALT } = require('../config/serverConfig');
 const bcrypt = require('bcrypt');
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {
@@ -13,21 +13,24 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      this.belongsToMany(models.Role, {
+        through: 'user_roles',
+      })
     }
   }
   User.init({
     email: {
-     type: DataTypes.STRING,
+      type: DataTypes.STRING,
       allowNull: false,
       unique: true,
       validate: {
         isEmail: true
       },
     },
-    password:{
+    password: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate:{
+      validate: {
         len: [3, 100]
       }
     }
@@ -37,8 +40,8 @@ module.exports = (sequelize, DataTypes) => {
   });
 
   //using triggers to hash the password before saving the user
-  User.beforeCreate((user)=>{
-   const encryptedPassword = bcrypt.hashSync(user.password, SALT);
+  User.beforeCreate((user) => {
+    const encryptedPassword = bcrypt.hashSync(user.password, SALT);
     user.password = encryptedPassword;
   });
   return User;

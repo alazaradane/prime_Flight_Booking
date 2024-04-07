@@ -6,9 +6,7 @@ const bcrypt = require('bcrypt');
 class UserService {
   constructor() {
     this.userRepository = new UserRepository();
-
   }
-
   async create(data) {
     try {
       const user = await this.userRepository.create(data);
