@@ -1,6 +1,6 @@
 const UserService = require('../services/user-service');
 const userService = new UserService();
-
+const {statusCodes} = require('http-status-codes')
 
 const create = async (req, res) => {
   try {
@@ -15,7 +15,7 @@ const create = async (req, res) => {
     });
   } catch (error) {
     console.log(error);
-    return res.status(500).json({
+    return res.status(error.statusCode).json({
       message: 'Something went wrong on user controller create method',
       data: {},
       success: false,
