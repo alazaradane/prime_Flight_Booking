@@ -39,12 +39,12 @@ const signIn = async (req, res) => {
       data: {},
       success: false,
       err: error,
-    
+
     })
   }
 }
 
-const isAuthenticated = async (req, res)=>{
+const isAuthenticated = async (req, res) => {
   try {
     //fetch token from request headers
     const token = req.headers['x-access-token'];
@@ -61,12 +61,12 @@ const isAuthenticated = async (req, res)=>{
       data: {},
       success: false,
       err: error,
-    
+
     })
   }
 }
 
-const isAdmin = async (req, res)=>{
+const isAdmin = async (req, res) => {
   try {
     const response = await userService.isAdmin(req.body.id);
     return res.status(201).json({
@@ -74,13 +74,14 @@ const isAdmin = async (req, res)=>{
       data: response,
       err: {}
     });
-    
+
   } catch (error) {
     return res.status(500).json({
       message: 'Something went wrong on user controller isAdmin method',
       data: {},
       success: false,
       err: error,
+    })
   }
 }
 
