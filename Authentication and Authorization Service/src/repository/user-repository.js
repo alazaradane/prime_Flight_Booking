@@ -53,7 +53,21 @@ class UserRepository{
     }
   }
 
-
+  
+  async isAdmin(userId){
+    try {
+      const user = await User.findByPk(userId);
+      const adminRole = await Role.findOne({
+        where: {
+          name: 'ADMIN'
+        }
+      });
+      return user.hasRole(adminRole);
+    } catch (error) {
+      console.log('Something went wrong on user repository isAdmin method');
+      throw error;
+    }
+  }
 
 }
 

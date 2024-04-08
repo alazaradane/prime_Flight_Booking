@@ -27,6 +27,7 @@ router.get('/dummy', (req, res) => {
 // If authenticated, the isAuthenticated method returns the user's ID.
 // The API Gateway stores the returned user ID in the request for potential future use.
 // The API Gateway then forwards the authenticated request to the appropriate service responsible for handling the /dummy route.
+router.get('isAdmin',AuthRequestValidator.validateIsAdminRequest,  UserController.isAdmin)
 
 
 module.exports = router;
