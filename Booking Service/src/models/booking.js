@@ -2,6 +2,7 @@
 const {
   Model
 } = require('sequelize');
+const { Sequelize } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Booking extends Model {
     /**
@@ -14,20 +15,30 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Booking.init({
-    flightId:{
+    flightId: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    userId:{
+    userId: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    status:{
-      type: DataTypes.ENUM,
+    status: {
+      type: Sequelize.ENUM,
       allowNull: false,
-      defaultValue:['In Process', 'Cancelled', 'Booked'],
+      values: ['In Process', 'Cancelled', 'Booked'],
       defaultValue: 'In Process'
-    }
+    },
+    noOfSeats: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 1
+    },
+    totalCost: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 0
+    },
   }, {
     sequelize,
     modelName: 'Booking',
