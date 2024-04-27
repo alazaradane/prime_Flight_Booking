@@ -12,12 +12,12 @@ const setupAndStartServer = async () => {
     console.log(`Server is running on port ${PORT}`);
 
   })
-  sendBasicEmail(
-    'virtualshubham2730@gmail.com',
-    'virtualshubham2730@gmail.com',
-    'this is testing email',
-    'hey this is the testing email from the reminder service'
-  )
+  // sendBasicEmail(
+  //   'virtualshubham2730@gmail.com',
+  //   'virtualshubham2730@gmail.com',
+  //   'this is testing email',
+  //   'hey this is the testing email from the reminder service'
+  // )
 
 }
 
