@@ -19,6 +19,10 @@ const setupAndStartServer = async () => {
   //   'hey this is the testing email from the reminder service'
   // )
 
+  // cron.schedule('*/2 * * * *', ()=>{
+  //   console.log('running a task every 2 minute');
+  // });
+
 }
 
 setupAndStartServer();
