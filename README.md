@@ -1,6 +1,6 @@
-# FlyFinde: Flight Booking System
+# FlyFinder: Flight Booking System
 
-FlyFinde is a flight booking system implemented using Micro-Service Architecture. It consists of several microservices including Search Service, Booking Service, Authentication Service, Reminder Service, and API Gateway.
+FlyFinder is a flight booking system implemented using Micro-Service Architecture. It consists of several microservices including Search Service, Booking Service, Authentication Service, Reminder Service, and API Gateway.
 
 ## Features
 
@@ -17,7 +17,7 @@ FlyFinde is a flight booking system implemented using Micro-Service Architecture
 
 ## Installation
 
-To run FlyFinde locally, follow these steps:
+To run FlyFinder locally, follow these steps:
 
 1. Clone the repository:
 
