@@ -1,6 +1,11 @@
-# FlyFinder: Flight Booking System
+# Prime Flight: Flight Booking System
 
-FlyFinder is a flight booking system implemented using Micro-Service Architecture. It consists of several microservices including Search Service, Booking Service, Authentication Service, Reminder Service, and API Gateway.
+PrimeFlight is a flight booking system designed using a Micro-Service Architecture. It aims to
+streamline the process of searching, booking, and managing flight reservations through a set of
+specialized microservices. The system enhances user experience by providing reliable and
+efficient services while ensuring scalability and maintainability. Each microservice is dedicated
+to a specific functionality, allowing for independent development and deployment, which is
+crucial for adapting to the dynamic needs of the airline industry.
 
 ## Features
 
@@ -17,34 +22,16 @@ FlyFinder is a flight booking system implemented using Micro-Service Architectur
 
 ## Installation
 
-To run FlyFinder locally, follow these steps:
-
-1. Clone the repository:
-
-git clone https://github.com/shubhamgupta2730/FlyFinder-Flight-Booking-System.git
+To run Prime Flight locally, follow these steps found on the attached files
 
 
-2. Install dependencies for each microservice:
+[Comprehensive Guide on setup Prime Flight on your machine](https://docs.google.com/document/d/1ZdC436I1vT-BnRntRcEmPKh7Bv-fCZI2bZq5kdjZNGc/edit?usp=sharing)
 
-cd search-service && npm install
-cd ../booking-service && npm install
-cd ../authentication-service && npm install
-cd ../reminder-service && npm install
-cd ../api-gateway && npm install
-
-
-3. Start each microservice:
-
-cd search-service && npm start
-cd ../booking-service && npm start
-cd ../authentication-service && npm start
-cd ../reminder-service && npm start
-cd ../api-gateway && npm start
 
 
 ## Contributing
 
-We welcome contributions to FlyFinde! Feel free to open issues or submit pull requests.
+We welcome contributions to Prime Flight! Feel free to open issues or submit pull requests.
 
 ## License
 
